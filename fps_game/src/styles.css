@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    touch-action: none;
+}
+
+#renderCanvas {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    outline: none;
+}
+
+.fps-ui {
+    position: absolute;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 2px black;
+    pointer-events: none;
+}
+
+.health-display {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 24px;
+}
+
+.ammo-display {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    text-align: right;
+}
+
+.weapon-display {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    font-size: 18px;
+    text-align: right;
+}
+
+.crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.notification {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 36px;
+    display: none;
+}
+
+.game-over button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pause-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    display: none;
+}
+
+.pause-menu button {
+    margin: 10px;
+    padding: 10px 20px;
+    width: 200px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pause-menu button:hover {
+    background-color: #45a049;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .health-display, .ammo-display {
+        font-size: 18px;
+    }
+    
+    .weapon-display {
+        font-size: 14px;
+    }
+    
+    .crosshair {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .notification {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .game-over {
+        font-size: 24px;
+    }
+    
+    .game-over button {
+        font-size: 16px;
+    }
+    
+    .pause-menu {
+        font-size: 20px;
+    }
+    
+    .pause-menu button {
+        font-size: 16px;
+        width: 180px;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    #renderCanvas {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
